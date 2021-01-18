@@ -1,6 +1,8 @@
 import socket
 
-ports = [21, 23, 80, 443, 3333, 8080]
+useAllPorts = True
+
+ports = range(65535) if useAllPorts else [21, 23, 80, 443, 3333, 8080]
 
 for port in ports:
   client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
